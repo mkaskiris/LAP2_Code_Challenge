@@ -24,7 +24,13 @@ class Post{
     }
 
     static create(title, name, body){
-        return new Promise (async (res,rej))
+        return new Promise (async (res,rej) =>{
+            try{
+
+            }catch (err){
+                rej('counldnt create')
+            }
+        })
     }
 }
 
