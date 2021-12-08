@@ -39,7 +39,7 @@ class Post{
             try{
                 let postData = await db.query(`INSERT INTO posts (title, name, body)
                                                 VALUES ($1,$2,$3)
-                                                RETURNING *;`[title, name, body]);
+                                                RETURNING *;`,[title, name, body]);
                 let post = new Post(postData.rows[0])
                 res(post);                   
             }catch (err){

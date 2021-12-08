@@ -18,8 +18,8 @@ function submitPost(e){
     };
 
     fetch('http://localhost:3000/posts/', options)
-        .then(d=>d.json())
-        .then(console.log)
+        //.then(d=>d.json())
+        //.then(console.log)
         // .then(getID)
         // .then(window.location.replace(''))
 }
