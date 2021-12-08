@@ -1,10 +1,10 @@
 DROP TABLE IF EXISTS posts;
 
-CREATE TABLE posts(
+CREATE TABLE posts (
     id serial PRIMARY KEY,
-    title varchar(100) NOT NULL,
-    name varchar(100) NOT NULL,
-    body varchar(500) NOT NULL
+    title varchar (100) NOT NULL,
+    name varchar (100) NOT NULL,
+    body varchar (500) NOT NULL
     );
 
 INSERT INTO posts (title,name,body)
