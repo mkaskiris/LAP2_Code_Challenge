@@ -7,11 +7,11 @@ function submitPost(e){
         name: e.target.name.value,
         body: e.target.body.value
     }
-    console.log(postData)
 
     const options = {
         method: 'POST',
         body: JSON.stringify(postData),
+        redirect:  'follow',
         headers: {
             "Content-Type": "application/json"
         }
@@ -19,7 +19,8 @@ function submitPost(e){
 
     fetch('http://localhost:3000/posts/', options)
         //.then(d=>d.json())
-        //.then(console.log)
+        .then(window.location.href = 'www.google.com')
+        .catch(console.warn)
         // .then(getID)
         // .then(window.location.replace(''))
 }

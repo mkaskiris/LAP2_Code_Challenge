@@ -43,7 +43,7 @@ class Post{
                 let post = new Post(postData.rows[0])
                 res(post);                   
             }catch (err){
-                rej('counldnt create')
+                rej(`counldnt create because of ${err}`)
             }
         })
     }
