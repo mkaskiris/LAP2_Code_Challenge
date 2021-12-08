@@ -1,0 +1,9 @@
+textarea:focus, input:focus{
+    outline: none;
+}
+
+section.forms{
+    display: table; 
+    width:100%;
+    vertical-align: middle;
+}
