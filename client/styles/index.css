@@ -1,9 +1,11 @@
-textarea:focus, input:focus{
-    outline: none;
+input[type=text]{
+    border: none;
 }
 
-section.forms{
-    display: table; 
-    width:100%;
-    vertical-align: middle;
+#forms{
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    margin-top: 10% ;
 }
+    
