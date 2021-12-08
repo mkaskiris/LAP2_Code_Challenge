@@ -1,4 +1,4 @@
-const db = require('../dbConfig')
+const db = require('../dbConfig/init');
 
 class Post{
     constructor(data){
@@ -9,12 +9,23 @@ class Post{
         //this.path = data.path;
     }
 
+    static get all(){
+        return new Promise( async (res,rej) =>{
+            try{
+                const postData = await db.query(`SELECT * FROM posts;`);
+                const posts = postData.rows.map(d=>new Post(d));
+                res(posts);
+            }catch(err){
+                rej('error retrieving posts')
+            }
+        })
+    }
     static findByPath(path){
         return new Promise(async (res,rej) =>{
             try{
                 let postData = await db.query(`SELECT * 
                                                 FROM posts
-                                                WHERE path = $1;`, [path])
+                                                WHERE id = $1;`, [path])
                 let post = new Post(postData.rows[0])
                 res(post);
             }catch (err){
