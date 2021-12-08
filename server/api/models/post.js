@@ -6,7 +6,7 @@ class Post{
         this.title = data.title;
         this.name = data.name;
         this.body = data.body;
-        this.path = data.path;
+        //this.path = data.path;
     }
 
     static findByPath(path){
@@ -26,7 +26,11 @@ class Post{
     static create(title, name, body){
         return new Promise (async (res,rej) =>{
             try{
-
+                let postData = await db.query(`INSERT INTO posts (title, name, body, path)
+                                                VALUES ($1,$2,$3)
+                                                RETURNING *;`[title, name, body]);
+                let post = new Post(postData.rows[0])
+                res(post);                   
             }catch (err){
                 rej('counldnt create')
             }
