@@ -1,3 +1,9 @@
+create sequence pkSeq
+    start 1
+    increment 1
+    NO MAXVALUE
+    CACHE 1;
+
 DROP TABLE IF EXISTS posts;
 
 CREATE TABLE posts(

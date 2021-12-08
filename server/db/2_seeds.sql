@@ -1,6 +1,6 @@
-INSERT INTO posts (title,pseudonym,body)
+INSERT INTO posts (id,title,pseudonym,body)
 VALUES
-    ('HELP','worrier272','I am currently struggling at everything'),
-    ('Everything sucks','boringmcboringface','Im so booooooooooooooooooooooooored'),
-    ('Lol','trolololol','lololololololl')
+    (nextval(pkSeq),'HELP','worrier272','I am currently struggling at everything'),
+    (nextval(pkSeq),'Everything sucks','boringmcboringface','Im so booooooooooooooooooooooooored'),
+    (nextval(pkSeq),'Lol','trolololol','lololololololl')
  
